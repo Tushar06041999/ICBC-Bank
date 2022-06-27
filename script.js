@@ -27,51 +27,106 @@
         // }
 
 
-    let currentDeposit=document.getElementById("currentDeposit");
-    let depositAmmount=document.getElementById("depositAmmount");
-    let addDeposit =document.getElementById("addDeposit");
+   
 
 
-
-    let withdraw=document.getElementById("withdraw");
-    let withdrawAmmount=document.getElementById("withdrawAmmount");
-    let withdrawDeposit=document.getElementById("withdrawDeposit");
-
-
-
-    let currentBalance=document.getElementById("currentBalance");
-
-
-    addDeposit.addEventListener("click", function(){
-       let currentBalance1=parseFloat(currentBalance.innerText);
-       let depositAmmount1=parseFloat(depositAmmount.value);
-       let currentDeposit1=parseFloat(currentDeposit.innerText);
-       let total=depositAmmount1 + currentDeposit1 ;
-       currentDeposit.innerText=total;
-       currentBalance.innerText=total;
+    // addDeposit.addEventListener("click", function(){
+    //    let currentBalance1=parseFloat(currentBalance.innerText);
+    //    let depositAmmount1=parseFloat(depositAmmount.value);
+    //    let currentDeposit1=parseFloat(currentDeposit.innerText);
+    //    let withdraw2=parseFloat(withdraw.innerText);
+    //    let total=depositAmmount1 + currentDeposit1  ;
+    //    currentDeposit.innerText=total- withdraw2;
+    //    currentBalance.innerText=total;
     //    currentBalance2.innerText=currentBalance;
-       depositAmmount.value="";
+    //    depositAmmount.value="";
 
-       if(currentDeposit===NaN){
-           currentDeposit.innerText=0;
-       }else{
-        currentDeposit.innerText=total;
-       }
-    })
+    //    if(currentDeposit===NaN){
+    //        currentDeposit.innerText=0;
+    //    }else{
+    //     currentDeposit.innerText=total;
+    //    }
+    // })
 
 
-   withdrawDeposit.addEventListener("click",function(){
+//    withdrawDeposit.addEventListener("click",function(){
 
-       let currentBalance2=parseFloat(currentBalance.innerText);
-       let withdrawAmmount1=parseFloat(withdrawAmmount.value);
-       let withdraw1=parseFloat(withdraw.innerText);
-       let total1=withdrawAmmount1 + withdraw1;
-       withdraw.innerText=total1;
-       let currentBalance3=currentBalance2 - withdrawAmmount1 ;
-       currentBalance.innerText=currentBalance3;
-       withdrawAmmount.value="";
-   })
+//        let currentBalance2=parseFloat(currentBalance.innerText);
+//        let withdrawAmmount1=parseFloat(withdrawAmmount.value);
+//        let withdraw1=parseFloat(withdraw.innerText);
+//        let total1=withdrawAmmount1 + withdraw1;
+//        withdraw.innerText=total1;
+//        let currentBalance3=currentBalance2 - withdrawAmmount1 ;
+//        currentBalance.innerText=currentBalance3;
+//        withdrawAmmount.value="";
+//    })
 
    
-   let currentBalance2=currentBalance1 + currentDeposit.innerText - withdraw.innerText;
-   console.log(currentBalance1)
+//    addDeposit.addEventListener("click",function(){
+//        let inputDeposit=parseInt(depositAmmount.value) ;
+//        let total=parseFloat(currentDeposit.innerHTML);
+//        let another1=inputDeposit+total;
+//        console.log(another1);
+    
+
+//        depositAmmount.value="";
+//    })
+
+//    withdrawDeposit.addEventListener("click",function(){
+//        let inputWithdraw=withdrawAmmount.value;
+//       withdraw.innerHTML=inputWithdraw;
+//       withdrawAmmount.value="";
+//    })
+
+// start New code from HEre And try to accurate everthing
+
+let depositAmmount=document.getElementById("depositAmmount");
+let addDeposit =document.getElementById("addDeposit");
+let currentDeposit=document.getElementById("currentDeposit");
+
+let withdraw=document.getElementById("withdraw");
+let withdrawAmmount=document.getElementById("withdrawAmmount");
+let withdrawDeposit=document.getElementById("withdrawDeposit");
+
+
+
+let currentBalance=document.getElementById("currentBalance");
+
+addDeposit.addEventListener("click",function(){
+
+let depositAmmount1=parseFloat(depositAmmount.value);
+let currentDeposit1=parseFloat(currentDeposit.innerText);
+let totaldeposit=depositAmmount1+currentDeposit1;
+currentDeposit.innerText=totaldeposit;
+
+//Balance Section start from Here 
+const currentbal=parseFloat(currentBalance.innerText);
+const total=depositAmmount1+currentbal;
+currentBalance.innerText=total;
+
+document.getElementById("depositAmmount").value="";
+
+
+
+
+})
+
+withdrawDeposit.addEventListener("click",function(){
+
+    let withdrawAmmount1=parseFloat(withdrawAmmount.value);
+    let withdraw1=parseFloat(withdraw.innerText);
+    let totalwithdraw=withdrawAmmount1+withdraw1;
+    withdraw.innerText= totalwithdraw;
+    
+//    balnce section start from Here
+const balance=currentDeposit.innerText -withdraw.innerText;
+currentBalance.innerText=balance;
+    
+    document.getElementById("withdrawAmmount").value="";
+    
+    
+    
+    })
+
+  
+
